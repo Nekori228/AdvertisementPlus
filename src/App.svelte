@@ -1,11 +1,22 @@
 <script>
 	import Header from "./components/Header.svelte";
 	import Footer from "./components/Footer.svelte";
+	import MainLogo from "./components/MainLogo.svelte";
+	import BrendText from "./components/BrendText.svelte";
+	import WorkHMAO from "./components/WorkHMAO.svelte";
+	import OurAdwantage from "./components/OurAdwantage.svelte";
+	import Provide from "./components/Provide.svelte";
+	import OurProjects from "./components/OurProjects.svelte";
 </script>
 
 <Header />
 <main>
-	<h1>Текст - фото</h1>
+	<MainLogo />
+	<BrendText />
+	<WorkHMAO />
+	<OurAdwantage />
+	<Provide />
+	<OurProjects />
 </main>
 <Footer />
 
