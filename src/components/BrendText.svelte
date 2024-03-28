@@ -18,6 +18,10 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: url('/img/backgroundBrendText.svg');
+    background-size: cover;
+    background-position: center;
+    height: 65em;
 }
 
 h1 {
