@@ -11,8 +11,8 @@
 <style>
     main {
       display: grid;
-      grid-template-columns: 1fr auto 1fr; /* Три столбца с равным размером и фиксированным размером */
-      height: 70vh;
+      grid-template-columns: 1fr auto 1fr;
+      height: 82vh;
     }
   
     .imageLogoMain {
