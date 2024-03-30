@@ -17,7 +17,7 @@
 <style>
 main {
     display: flex;
-    height: 80vh;
+    height: 90vh;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -29,13 +29,13 @@ h1 {
     font-family: "Raleway", sans-serif;
     font-size: 50px;
     font-weight: 600;
-    /* padding-top: 4.5%;
-    padding-bottom: 7%; */
+    padding-bottom: 3%;
 }
 
 .box1 {
     grid-column: 1;
     background: #E9E0CF;
+    margin-left: -4%;
     width: 530px;
     height: 530px;
 }
@@ -44,6 +44,8 @@ h1 {
     grid-column: 1;
     background-color: rgba(255, 255, 255, 0.0);
     border: 4px solid #012E33;
+    margin-top: 20%;
+    margin-left: 50%;
     width: 60px;
     height: 60px;
 }
@@ -59,7 +61,8 @@ h1 {
 .box4 {
     grid-column: 1;
     background: #000000;
-    margin-left: 55%;
+    margin-left: 57%;
+    margin-top: 10%;
     width: 67px;
     height: 67px;
 }
@@ -73,7 +76,7 @@ h1 {
 
 .blackText {
     font-family: "Jost", sans-serif;
-    font-size: 2.5em;
+    font-size: 35px;
     font-weight: 500;
     color: #000000;
     margin: 0;
@@ -85,7 +88,7 @@ h1 {
 
 .redText {
     font-family: "Jost", sans-serif;
-    font-size: 2em;
+    font-size: 35px;
     font-weight: 400;
     color: #B3111C;
     margin: 0;
@@ -95,9 +98,10 @@ h1 {
     grid-column: 2;
     border-radius: 10px;
     border: 2px solid black;
-    padding: 30px;
+    padding: 40px;
     margin: 20px;
-    width: 45%;
+    width: 36%;
+    margin-bottom: 10%;
     }
 
 .background-element {

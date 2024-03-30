@@ -21,7 +21,6 @@
 <Header />
 <main>
 	<MainLogo />
-	<d
 	<BrendText />
 	<WorkHMAO />
 	<OurAdwantage />
