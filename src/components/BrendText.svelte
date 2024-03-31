@@ -51,25 +51,28 @@ h1 {
 }
 
 .box3 {
-    grid-column: 3;
+    grid-column: 2;
     background: #F5F5F5;
-    margin-left: 50%;
+    margin-left: 70%;
     width: 258px;
     height: 258px;
 }
 
 .box4 {
     grid-column: 1;
+    grid-row: 3;
     background: #000000;
-    margin-left: 57%;
-    margin-top: 10%;
+    margin-left: 50%;
     width: 67px;
     height: 67px;
 }
 
 .box5 {
-    grid-column: 4;
+    grid-column: 3;
+    grid-row: 2;
     background: #000000;
+    margin-left: -35%;
+    margin-top: -10%;
     width: 175px;
     height: 175px;
 }
@@ -111,7 +114,6 @@ h1 {
     left: 0; /* Add this line to position the element at the left edge of the viewport */
     width: 100%; /* Add this line to make the element full width */
     height: 100%; /* Add this line to make the element full height */
-    
     z-index: -1; /* Add this line to make the element appear behind the other elements */
 }
 </style>
