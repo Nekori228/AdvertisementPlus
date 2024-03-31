@@ -5,8 +5,6 @@
 	import BrendText from "./components/BrendText.svelte";
 	import WorkHMAO from "./components/WorkHMAO.svelte";
 	import OurAdwantage from "./components/OurAdwantage.svelte";
-	import Provide from "./components/Provide.svelte";
-	import OurProjects from "./components/OurProjects.svelte";
 </script>
 
 <header>
@@ -24,10 +22,8 @@
 	<BrendText />
 	<WorkHMAO />
 	<OurAdwantage />
-	<Provide />
-	<OurProjects />
 </main>
-<Footer />
+<!-- <Footer /> -->
 
 
 <style>

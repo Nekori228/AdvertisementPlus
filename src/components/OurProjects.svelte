@@ -30,6 +30,12 @@ let photos = [
         margin: 0% 10% 0% 10%;
     }
 
+    h1 {
+        font-family: "Raleway", sans-serif;
+        font-size: 50px;
+        font-weight: 600;
+    }
+
     .content {
         display: flex;
         width: 100%;

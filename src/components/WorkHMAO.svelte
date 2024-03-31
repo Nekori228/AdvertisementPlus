@@ -14,11 +14,9 @@
 <style>
 main {
     display: flex;
-    height: 80vh;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    height: 70vh;
     position: relative;
+    flex-direction: column;
     /* margin: 0% 15% 0% 15%; */
 }
 
@@ -33,7 +31,9 @@ h1 {
     color: #9A9A9A;
     font-size: 36px;
     font-weight: 400;
-    text-align: center;
+    
+    width: 123%;
+    margin-top: 45%;
 }
 
 .box1 {
@@ -73,12 +73,14 @@ h1 {
 }
 
 .h1Left {
-    display: flex;
+    margin-right: 41%;
+    margin-top: 2%;
     margin-bottom: 25%;
 }
 
 .h1Rigt {
-    display: flex;
+    margin-left: 32%;
+    margin-top: -1%;
     flex-direction: row-reverse;
 }
 

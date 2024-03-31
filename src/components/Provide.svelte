@@ -52,23 +52,30 @@
         gap: 10px;
     }
 
+    .photos {
+        margin-right: 2%;
+    }
+
     .photos img {
         max-width: 100%;
         max-height: 100%;
     }
 
     .marginText {
-        margin-top: 50%;
+        margin-top: 25%;
     }
 
     p {
-        font-size: 1.4em;
+        font-family: "Jost", sans-serif;
+        font-size: 35px;
+        font-weight: 300;
         text-align: left;
-        margin: 0; /* Убираем внешние отступы параграфа */
     }
 
     h1 {
+        font-family: "Raleway", sans-serif;
+        font-size: 50px;
+        font-weight: 600;
         text-align: left;
-        margin: 0 0 10px 0; /* Убираем внешние отступы заголовка */
     }
 </style>

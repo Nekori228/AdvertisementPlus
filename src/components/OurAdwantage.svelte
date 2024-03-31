@@ -1,4 +1,6 @@
 <script>
+    import Provide from "./Provide.svelte";
+	import OurProjects from "./OurProjects.svelte";
 </script>
 
 <main>
@@ -23,13 +25,34 @@
                 <p>Так отзываются наши заказчики) Свои отзывы можете оставлять на картах дубл гис, яндекс  др.  Спасибо что выбираете нас! :)</p>
             </div>
     </div>
+    <div class="marginBlock"></div>
+    <Provide />
+	<OurProjects />
+    <div class="background-element">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box5"><div class="box4"></div></div>
+        <div class="box6"><div class="box7"></div></div>
+        <div class="box10"><div class="box9"><div class="box8"></div></div></div>
+        <div class="box11"></div>
+        <div class="box12"></div>
+    </div>
 </main>
 
 <style>
+
+    main {
+        display: flex;
+        height: 90vh;
+        position: relative;
+        flex-direction: column;
+    }
+
     .grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 40px;
+        grid-column-gap: 15%; /* Horizontal gap */
         margin: 0% 5% 0% 5%;
     }
 
@@ -41,14 +64,138 @@
         align-items: flex-start;
     }
 
+    .marginBlock {
+        margin: 1%;
+    }
+
+    h1 {
+        font-family: "Raleway", sans-serif;
+        font-size: 50px;
+        font-weight: 600;
+    }
+
     h2 {
-        font-weight: bold;
-        margin-bottom: 10px;
+        font-family: "Jost", sans-serif;
+        font-size: 35px;
+        font-weight: 400;
     }
 
     p {
+        font-family: "Jost", sans-serif;
+        font-size: 35px;
+        font-weight: 300;
         margin: 0; 
-        font-size: 1.4em;
         text-align: left;
+    }
+
+    .box1 {
+        grid-column: 1;
+        background: #F39D54;
+        margin-top: 20%;
+        margin-left: 3%;
+        width: 56px;
+        height: 56px;
+    }
+
+    .box2 {
+        grid-column: 2;
+        background: #E9E0CF;
+        margin-top: 15%;
+        margin-left: 20%;
+        width: 119px;
+        height: 119px;
+    }
+    
+    .box3 {
+        grid-column: 1;
+        grid-row: 2;
+        background: #E9E0CF;
+        margin-top: 47%;
+        width: 255px;
+        height: 255px;
+    }
+
+    .box4 {
+        grid-column: 1;
+        grid-row: 2;
+        background-color: rgba(255, 255, 255, 0.0);
+        border: 4px solid #D54E54;
+        margin-left: -20%;
+        margin-top: -22%;
+        width: 90px;
+        height: 90px;
+    }   
+
+    .box5 {
+        grid-column: 1;
+        background: #F5F3FF;
+        margin-left: 12%;
+        margin-top: 13%;
+        width: 258px;
+        height: 258px;
+    }
+
+    .box6 {
+        grid-column: 2;
+        background: #F5F3FF;
+        width: 537px;
+        height: 537px;
+    }
+
+    .box7 {
+        grid-column: 1;
+        grid-row: 2;
+        background-color: rgba(255, 255, 255, 0.0);
+        border: 4px solid #000000;
+        width: 122px;
+        height: 122px;
+    } 
+
+    .box8 {
+        grid-column: 1;
+        grid-row: 2;
+        background-color: rgba(255, 255, 255, 0.0);
+        border: 4px solid #000000;
+        width: 81px;
+        height: 81px;
+    } 
+
+    .box9 {
+        grid-column: 1;
+        background: #D54E54;
+        width: 117px;
+        height: 117px;
+    }
+
+    .box10 {
+        grid-column: 1;
+        background: #F5F3FF;
+        width: 673px;
+        height: 799px;
+    }
+
+    .box11 {
+        grid-column: 2;
+        background-color: rgba(255, 255, 255, 0.0);
+        border: 4px solid #D54E54;
+        width: 138px;
+        height: 138px;
+    }
+
+    .box12 {
+        grid-column: 2;
+        background: #E9E0CF;
+        width: 393px;
+        height: 393px;
+    }
+
+    .background-element {
+        display: grid;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
     }
 </style>
