@@ -27,6 +27,7 @@
     </div>
     <div class="marginBlock"></div>
     <Provide />
+    <div class="marginBlock"></div>
 	<OurProjects />
     <div class="background-element">
         <div class="box1"></div>
@@ -34,9 +35,8 @@
         <div class="box3"></div>
         <div class="box5"><div class="box4"></div></div>
         <div class="box6"><div class="box7"></div></div>
-        <div class="box10"><div class="box9"><div class="box8"></div></div></div>
-        <div class="box11"></div>
-        <div class="box12"></div>
+        <div class="box10"><div class="box9"></div><div class="box8"></div></div>
+        <div class="box12"><div class="box11"></div></div>
     </div>
 </main>
 
@@ -44,7 +44,7 @@
 
     main {
         display: flex;
-        height: 90vh;
+        height: 100vh;
         position: relative;
         flex-direction: column;
     }
@@ -91,7 +91,7 @@
     .box1 {
         grid-column: 1;
         background: #F39D54;
-        margin-top: 20%;
+        margin-top: 16%;
         margin-left: 3%;
         width: 56px;
         height: 56px;
@@ -100,8 +100,8 @@
     .box2 {
         grid-column: 2;
         background: #E9E0CF;
-        margin-top: 15%;
-        margin-left: 20%;
+        margin-top: 20%;
+        margin-left: 1%;
         width: 119px;
         height: 119px;
     }
@@ -110,7 +110,7 @@
         grid-column: 1;
         grid-row: 2;
         background: #E9E0CF;
-        margin-top: 47%;
+        margin-top: 36%;
         width: 255px;
         height: 255px;
     }
@@ -130,7 +130,7 @@
         grid-column: 1;
         background: #F5F3FF;
         margin-left: 12%;
-        margin-top: 13%;
+        margin-top: 20%;
         width: 258px;
         height: 258px;
     }
@@ -138,6 +138,7 @@
     .box6 {
         grid-column: 2;
         background: #F5F3FF;
+        margin-top: -25%;
         width: 537px;
         height: 537px;
     }
@@ -147,6 +148,8 @@
         grid-row: 2;
         background-color: rgba(255, 255, 255, 0.0);
         border: 4px solid #000000;
+        margin-top: -15%;
+        margin-left: 90%;
         width: 122px;
         height: 122px;
     } 
@@ -156,6 +159,8 @@
         grid-row: 2;
         background-color: rgba(255, 255, 255, 0.0);
         border: 4px solid #000000;
+        margin-left: 70%;
+        margin-top: -7%;
         width: 81px;
         height: 81px;
     } 
@@ -163,13 +168,17 @@
     .box9 {
         grid-column: 1;
         background: #D54E54;
+        margin-top: -10%;
+        margin-left: 60%;
         width: 117px;
         height: 117px;
     }
 
     .box10 {
         grid-column: 1;
+        grid-row: 8;
         background: #F5F3FF;
+        margin-top: 50%;
         width: 673px;
         height: 799px;
     }
@@ -178,13 +187,18 @@
         grid-column: 2;
         background-color: rgba(255, 255, 255, 0.0);
         border: 4px solid #D54E54;
+        margin-left: 30%;
+        margin-top: -130%;
         width: 138px;
         height: 138px;
     }
 
     .box12 {
         grid-column: 2;
+        grid-row: 11;
         background: #E9E0CF;
+        margin-left: 57%;
+        margin-top: -25%;
         width: 393px;
         height: 393px;
     }

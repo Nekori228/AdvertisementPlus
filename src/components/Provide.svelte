@@ -52,10 +52,6 @@
         gap: 10px;
     }
 
-    .photos {
-        margin-right: 2%;
-    }
-
     .photos img {
         max-width: 100%;
         max-height: 100%;
