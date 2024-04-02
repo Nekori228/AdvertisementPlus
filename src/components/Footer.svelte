@@ -25,6 +25,8 @@
                     <br>Все права защищены 2023</p>
             </div>
         </div>
+        <div class="box2"><div class="box1"></div></div>
+        <div class="box3"></div>
     </div>
     <div class="background-element">
         <div class="box1"></div>
@@ -35,9 +37,31 @@
     footer {
     background: #E9E0CF;
     margin: 0;
-    margin-top: 110%;
     padding: 0 5%;
 }
+
+.box1 {
+      grid-column: 1;
+      background: #B3111C;
+      margin-left: -30%;
+      margin-top: -30%;
+      width: 98px;
+      height: 98px;
+    }
+
+    .box2 {
+      background-color: rgba(255, 255, 255, 0.0);
+      border: 3px solid #000000;
+      width: 148px;
+      height: 148px;
+    }
+
+    .box3 {
+      grid-column: 1;
+      background: #000000;
+      width: 58px;
+      height: 58px;
+    }
 
 .containerBlcokColor {
     transform: translateX(-50%);

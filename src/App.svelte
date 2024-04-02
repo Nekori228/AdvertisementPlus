@@ -1,10 +1,10 @@
 <script>
 	import Header from "./components/Header.svelte";
-	import Footer from "./components/Footer.svelte";
 	import MainLogo from "./components/MainLogo.svelte";
 	import BrendText from "./components/BrendText.svelte";
 	import WorkHMAO from "./components/WorkHMAO.svelte";
 	import OurAdwantage from "./components/OurAdwantage.svelte";
+	
 </script>
 
 <header>
@@ -23,7 +23,6 @@
 	<WorkHMAO />
 	<OurAdwantage />
 </main>
-<Footer />
 
 
 <style>
@@ -35,6 +34,13 @@
 		max-width: 240px;
 		margin: 0 auto;
 	}
+
+	main.svelte-178ldct {
+        text-align: left;
+        padding: 0em;
+        max-width: 100%;
+        margin: 0;
+    }
 
 	@media (min-width: 640px) {
 		main {

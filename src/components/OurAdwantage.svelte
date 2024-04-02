@@ -1,6 +1,7 @@
 <script>
     import Provide from "./Provide.svelte";
 	import OurProjects from "./OurProjects.svelte";
+    import Footer from "./Footer.svelte";
 </script>
 
 <main>
@@ -29,6 +30,8 @@
     <Provide />
     <div class="marginBlock"></div>
 	<OurProjects />
+    <div class="marginBlock"></div>
+    <Footer />
     <div class="background-element">
         <div class="box1"></div>
         <div class="box2"></div>
@@ -52,7 +55,7 @@
     .grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-column-gap: 15%; /* Horizontal gap */
+        grid-column-gap: 15%;
         margin: 0% 5% 0% 5%;
     }
 
