@@ -44,8 +44,8 @@ input:disabled {
 	color: #ccc;
 }
 
-main.svelte-sxl2oo {
-	padding:0em;
+:main.svelte-sxl2oo {
+	padding: 0em;
 }
 /* button {
 	color: #333;
