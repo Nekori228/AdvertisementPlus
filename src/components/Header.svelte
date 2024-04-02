@@ -48,10 +48,11 @@
         padding: 0% 5% 0%;
         background: #E9E0CF;
         justify-content: space-between;
+        height: 5em;
     }
 
     .block1 {
-        padding: 10px;
+        padding: 20px;
     }
     
     nav {
@@ -95,8 +96,9 @@
     }
 
     h2 {
-        font-size: 1.1em;
-        font-weight: 500;
+        font-family: "Jost", sans-serif;
+        font-size: 35px;
+        font-weight: 400;
     }
 
     .burger-button {

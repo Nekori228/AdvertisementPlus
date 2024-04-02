@@ -1,5 +1,5 @@
 <footer>
-    <div class="container ">
+    <div class="container">
         <div class="containerBlcokColor">
             <img src="/img/logo_big.svg" class="imgLogo" alt="big logo" width="568" height="180">
         </div>
@@ -29,7 +29,7 @@
         <div class="box3"></div>
     </div>
     <div class="background-element">
-        <div class="box1"></div>
+        <div class="box4"></div>
     </div>
 </footer>
 
@@ -37,7 +37,7 @@
     footer {
     background: #E9E0CF;
     margin: 0;
-    padding: 0 5%;
+    width: 100%;
 }
 
 .box1 {
@@ -52,6 +52,8 @@
     .box2 {
       background-color: rgba(255, 255, 255, 0.0);
       border: 3px solid #000000;
+      margin-left: 5%;
+      margin-top: -3%;
       width: 148px;
       height: 148px;
     }
@@ -59,8 +61,17 @@
     .box3 {
       grid-column: 1;
       background: #000000;
+      margin-left: 5%;
+      margin-top: 20%;
       width: 58px;
       height: 58px;
+    }
+
+    .box4 {
+      background-color: rgba(255, 255, 255, 0.0);
+      border: 3px solid #34828C;
+      width: 148px;
+      height: 148px;
     }
 
 .containerBlcokColor {
@@ -70,11 +81,14 @@
     border: 5px solid #34828C;
     background-color: transparent;
     overflow: hidden;
+    margin-right: 10%;
+    margin-left: 0%;
+    margin-top: -7%;
 }
 
 .imgLogo {
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 100%;
@@ -85,12 +99,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #E9E0CF;
+    height: 31em;
+    width: 100%;
 }
 
 .container2 {
     display: table-cell;
     text-align: center;
     vertical-align: middle;
+    margin-left: -16%;
 }
 
 .footerCol {
@@ -128,12 +146,16 @@ h1 {
     font-family: "Jost", sans-serif;
     font-size: 35px;
     font-weight: 400;
+    margin: 0;
+    padding: 0;
 }
 
 h2 {
     font-family: "Jost", sans-serif;
     font-size: 35px;
     font-weight: 400;
+    margin: 0;
+    padding: 0;
 }
 
 p {

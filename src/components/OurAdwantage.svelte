@@ -30,7 +30,7 @@
     <Provide />
     <div class="marginBlock"></div>
 	<OurProjects />
-    <div class="marginBlock"></div>
+    <div class="marginBlock2"></div>
     <Footer />
     <div class="background-element">
         <div class="box1"></div>
@@ -69,6 +69,10 @@
 
     .marginBlock {
         margin: 1%;
+    }
+
+    .marginBlock2 {
+        margin: 12%;
     }
 
     h1 {
@@ -200,7 +204,7 @@
         grid-column: 2;
         grid-row: 11;
         background: #E9E0CF;
-        margin-left: 57%;
+        margin-left: 55%;
         margin-top: -25%;
         width: 393px;
         height: 393px;
