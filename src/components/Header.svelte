@@ -4,6 +4,7 @@
     function toggleMenu() {
         isMenuOpen = !isMenuOpen;
     }
+    
 </script>
 
 <header>

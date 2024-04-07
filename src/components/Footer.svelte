@@ -81,8 +81,7 @@
     border: 5px solid #34828C;
     background-color: transparent;
     overflow: hidden;
-    margin-right: 10%;
-    margin-left: 0%;
+    margin-left: 5%;
     margin-top: -7%;
 }
 

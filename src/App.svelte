@@ -5,6 +5,8 @@
 	import WorkHMAO from "./components/WorkHMAO.svelte";
 	import OurAdwantage from "./components/OurAdwantage.svelte";
 	
+	let homePage = 'home';
+	let photoPage = 'photo';
 </script>
 
 <header>
