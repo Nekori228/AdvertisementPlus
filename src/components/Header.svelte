@@ -4,6 +4,8 @@
     function toggleMenu() {
         isMenuOpen = !isMenuOpen;
     }
+
+    import { Link } from 'svelte-routing';
 </script>
 
 <header>
@@ -69,7 +71,12 @@
     <img src="/img/logo_small.svg" alt="small logo" width="200" height="64" />
     <ul class="ulHeader">
         <li>
-            <a href=""><h2>Контакты</h2></a>
+            <nav>
+                <Link to="/test">Контакты</Link>
+            </nav>
+        </li>
+        <li>
+                <Link to="/test">Контакты</Link>
         </li>
         <div class="block1"></div>
         <li>
