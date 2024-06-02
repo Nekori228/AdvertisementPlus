@@ -1,15 +1,9 @@
 <script>
-	import { Router, Route } from "svelte-routing";
-	import Header from "./components/Header.svelte";
-	import MainLogo from "./components/MainLogo.svelte";
-	import BrendText from "./components/BrendText.svelte";
-	import WorkHMAO from "./components/WorkHMAO.svelte";
-	import OurAdwantage from "./components/OurAdwantage.svelte";
-
-	import Test from './routes/Test.svelte';
-	
-	let homePage = 'home';
-	let photoPage = 'photo';
+	import { Router, Route, Link } from "svelte-routing";
+	import Home from './pages/Home.svelte';
+	import Contact from './pages/Contact.svelte';
+	import Portfolio from './pages/Portfolio.svelte';
+	export let url = "";
 </script>
 
 <header>
@@ -21,15 +15,12 @@
 	<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100;200;300&display=swap" rel="stylesheet">
 </header>
 
-<Router>
-	<Header />
-	<main>
-		<Route path="/test" component={Test} />
-		<MainLogo />
-		<BrendText />
-		<WorkHMAO />
-		<OurAdwantage />
-	</main>
+<Router url="{url}">
+	<div>
+		<Route path="/"><Home /></Route>
+		<Route path="Contact" component="{Contact}"></Route>
+		<Route path="Portfolio" component="{Portfolio}"></Route>
+	</div>
 </Router>
 
 

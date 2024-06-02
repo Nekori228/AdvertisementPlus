@@ -56,20 +56,13 @@
                 <li><p class="lastdropdowntext">Интерьерная печать</p></li>
             </ul>
         </div>
-        <!-- <ul class="ulMenu">
-            <li></li>
-            <div class="block1"></div>
-            <li>
-                <a href=""><h2>Портфолио</h2></a>
-            </li>
-            <div class="block1"></div>
-            <li>
-                <a href=""><h2>Портфолио</h2></a>
-            </li>
-        </ul> -->
     </nav>
     <img src="/img/logo_small.svg" alt="small logo" width="200" height="64" />
     <ul class="ulHeader">
+        <li>
+            <Link style="text-decoration: none;" to="/"><h2 class="btnNav">Главная</h2></Link>
+        </li>
+        <div class="block1"></div>
         <li>
             <Link style="text-decoration: none;" to="Contact"><h2 class="btnNav">Контакты</h2></Link>
         </li>
