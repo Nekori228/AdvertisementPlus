@@ -2,15 +2,18 @@
 </script>
 
 <main>
+    <div style="margin: 1%"></div>
     <div class="divBloc">
         <img src="/img/bloc.svg" alt="bloc" />
         <div class="text-container">
             <h1 class="textMainCont">Контакты</h1>
         </div>
     </div>
+    <div style="margin: 0.7%"></div>
     <p class="textReview">
         Оставляйте свои отзывы на картах дубл гис, яндекс и др
     </p>
+    <div style="margin: 1%"></div>
     <div class="infoCont">
         <div class="infoBlock">
             <p class="textInfoCont">+7 (3462) 66-64-64</p>
@@ -33,6 +36,7 @@
             >
         </div>
     </div>
+    <div style="margin: 1%"></div>
     <div class="borderDiv">
         <script
             type="text/javascript"

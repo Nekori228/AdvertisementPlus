@@ -7,7 +7,8 @@
   <main>
     <HeaderSec/>
     <ContactsText/>
-    <!-- <Footer/> -->
+    <div style="margin: 15%;"></div>
+    <Footer/>
   </main>
 
 
