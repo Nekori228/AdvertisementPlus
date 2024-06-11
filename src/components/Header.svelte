@@ -8,7 +8,7 @@
     import { Link } from 'svelte-routing';
 </script>
 
-<header>
+<header class="headerMain">
     <button class="burger-button" on:click={toggleMenu}>
         <div class="burger-menu" class:open={isMenuOpen}>
             <div></div>

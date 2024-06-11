@@ -228,6 +228,169 @@
             </figure>
         </div>
     </div>
+    <div class="containerDiv6">
+        <div class="gallery">
+            <figure class="gallery__item gallery__item--30">
+                <img
+                    src="img/photoItems/img30.svg"
+                    class="gallery__img"
+                    alt="img30"
+                />
+            </figure>
+            <figure class="gallery__item gallery__item--31">
+                <img
+                    src="img/photoItems/img31.svg"
+                    class="gallery__img"
+                    alt="img31"
+                />
+            </figure>
+            <figure class="gallery__item gallery__item--32">
+                <img
+                    src="img/photoItems/img32.svg"
+                    class="gallery__img"
+                    alt="img32"
+                />
+            </figure>
+            <figure class="gallery__item gallery__item--33">
+                <img
+                    src="img/photoItems/img33.svg"
+                    class="gallery__img"
+                    alt="img33"
+                />
+            </figure>
+            <figure class="gallery__item gallery__item--34">
+                <img
+                    src="img/photoItems/img34.svg"
+                    class="gallery__img"
+                    alt="img34"
+                />
+            </figure>
+            <figure class="gallery__item gallery__item--35">
+                <img
+                    src="img/photoItems/img35.svg"
+                    class="gallery__img"
+                    alt="img35"
+                />
+            </figure>
+            <figure class="gallery__item gallery__item--36">
+                <img
+                    src="img/photoItems/img36.svg"
+                    class="gallery__img"
+                    alt="img36"
+                />
+            </figure>
+        </div>
+    </div>
+    <div class="containerDiv7">
+        <div class="gallery">
+            <figure class="gallery__item gallery__item--37">
+                <img
+                    src="img/photoItems/img37.svg"
+                    class="gallery__img"
+                    alt="img37"
+                />
+            </figure>
+            <figure class="gallery__item gallery__item--38">
+                <img
+                    src="img/photoItems/img38.svg"
+                    class="gallery__img"
+                    alt="img38"
+                />
+            </figure>
+            <figure class="gallery__item gallery__item--39">
+                <img
+                    src="img/photoItems/img39.svg"
+                    class="gallery__img"
+                    alt="img39"
+                />
+            </figure>
+            <figure class="gallery__item gallery__item--40">
+                <img
+                    src="img/photoItems/img40.svg"
+                    class="gallery__img"
+                    alt="img40"
+                />
+            </figure>
+        </div>
+    </div>
+    <div class="containerDiv8">
+        <div class="gallery">
+            <figure class="gallery__item gallery__item--41">
+                <img
+                    src="img/photoItems/img41.svg"
+                    class="gallery__img"
+                    alt="img41"
+                />
+            </figure>
+            <figure class="gallery__item gallery__item--42">
+                <img
+                    src="img/photoItems/img42.svg"
+                    class="gallery__img"
+                    alt="img42"
+                />
+            </figure>
+            <figure class="gallery__item gallery__item--43">
+                <img
+                    src="img/photoItems/img43.svg"
+                    class="gallery__img"
+                    alt="img43"
+                />
+            </figure>
+            <figure class="gallery__item gallery__item--44">
+                <img
+                    src="img/photoItems/img44.svg"
+                    class="gallery__img"
+                    alt="img44"
+                />
+            </figure>
+            <figure class="gallery__item gallery__item--45">
+                <img
+                    src="img/photoItems/img45.svg"
+                    class="gallery__img"
+                    alt="img45"
+                />
+            </figure>
+        </div>
+    </div>
+    <div class="containerDiv9">
+        <div class="gallery">
+            <figure class="gallery__item gallery__item--46">
+                <img
+                    src="img/photoItems/img46.svg"
+                    class="gallery__img"
+                    alt="img46"
+                />
+            </figure>
+            <figure class="gallery__item gallery__item--47">
+                <img
+                    src="img/photoItems/img47.svg"
+                    class="gallery__img"
+                    alt="img47"
+                />
+            </figure>
+            <figure class="gallery__item gallery__item--48">
+                <img
+                    src="img/photoItems/img48.svg"
+                    class="gallery__img"
+                    alt="img48"
+                />
+            </figure>
+            <figure class="gallery__item gallery__item--49">
+                <img
+                    src="img/photoItems/img49.svg"
+                    class="gallery__img"
+                    alt="img49"
+                />
+            </figure>
+            <figure class="gallery__item gallery__item--50">
+                <img
+                    src="img/photoItems/img50.svg"
+                    class="gallery__img"
+                    alt="img50"
+                />
+            </figure>
+        </div>
+    </div>
 </main>
 
 <style>
@@ -489,6 +652,173 @@
     }
 
     .gallery__item--29 {
+        grid-column-start: 13;
+        grid-column-end: 16;
+        grid-row-start: 4;
+        grid-row-end: 7;
+    }
+
+    .containerDiv6 {
+        width: 85%;
+        margin: 2rem auto;
+    }
+
+    .gallery__item--30 {
+        grid-column-start: 1;
+        grid-column-end: 7;
+        grid-row-start: 1;
+        grid-row-end: 7;
+    }
+
+    .gallery__item--31 {
+        grid-column-start: 7;
+        grid-column-end: 10;
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+
+    .gallery__item--32 {
+        grid-column-start: 10;
+        grid-column-end: 13;
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+
+    .gallery__item--33 {
+        grid-column-start: 13;
+        grid-column-end: 16;
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+
+    .gallery__item--34 {
+        grid-column-start: 7;
+        grid-column-end: 10;
+        grid-row-start: 4;
+        grid-row-end: 7;
+    }
+
+    .gallery__item--35 {
+        grid-column-start: 10;
+        grid-column-end: 13;
+        grid-row-start: 4;
+        grid-row-end: 7;
+    }
+
+    .gallery__item--36 {
+        grid-column-start: 13;
+        grid-column-end: 16;
+        grid-row-start: 4;
+        grid-row-end: 7;
+    }
+
+    .containerDiv7 {
+        width: 85%;
+        margin: 2rem auto;
+    }
+
+    .gallery__item--37 {
+        grid-column-start: 1;
+        grid-column-end: 7;
+        grid-row-start: 1;
+        grid-row-end: 7;
+    }
+
+    .gallery__item--38 {
+        grid-column-start: 7;
+        grid-column-end: 10;
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+
+    .gallery__item--39 {
+        grid-column-start: 7;
+        grid-column-end: 10;
+        grid-row-start: 4;
+        grid-row-end: 7;
+    }
+
+    .gallery__item--40 {
+        grid-column-start: 10;
+        grid-column-end: 16;
+        grid-row-start: 1;
+        grid-row-end: 7;
+    }
+
+    .containerDiv8 {
+        width: 85%;
+        margin: 2rem auto;
+    }
+
+    .gallery__item--41 {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+
+    .gallery__item--42 {
+        grid-column-start: 4;
+        grid-column-end: 7;
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+
+    .gallery__item--43 {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 4;
+        grid-row-end: 7;
+    }
+
+    .gallery__item--44 {
+        grid-column-start: 4;
+        grid-column-end: 7;
+        grid-row-start: 4;
+        grid-row-end: 7;
+    }
+
+    .gallery__item--45 {
+        grid-column-start: 7;
+        grid-column-end: 16;
+        grid-row-start: 1;
+        grid-row-end: 7;
+    }
+
+    .containerDiv9 {
+        width: 85%;
+        margin: 2rem auto;
+    }
+
+    .gallery__item--46 {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+
+    .gallery__item--47 {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 4;
+        grid-row-end: 7;
+    }
+
+    .gallery__item--48 {
+        grid-column-start: 4;
+        grid-column-end: 13;
+        grid-row-start: 1;
+        grid-row-end: 7;
+    }
+
+    .gallery__item--49 {
+        grid-column-start: 13;
+        grid-column-end: 16;
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+
+    .gallery__item--50 {
         grid-column-start: 13;
         grid-column-end: 16;
         grid-row-start: 4;

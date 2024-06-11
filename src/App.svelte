@@ -17,17 +17,17 @@
 </header>
 
 <Router url="{url}">
-	<div>
-		<Route path="/"><Home /></Route>
-		<Route path="Contact" component="{Contact}"></Route>
-		<Route path="Portfolio" component="{Portfolio}"></Route>
-	</div>
+	<main>
+		<div>
+			<Route path="/"><Home /></Route>
+			<Route path="Contact" component="{Contact}"></Route>
+			<Route path="Portfolio" component="{Portfolio}"></Route>
+		</div>
+	</main>
 </Router>
 
 
 <style>
-	
-
 	main {
 		text-align: center;
 		padding: 0em;
