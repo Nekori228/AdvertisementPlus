@@ -2,6 +2,7 @@
 </script>
 
 <main>
+    <div class="background"></div>
     <div class="text-container">
         <h1 class="textMainCont">Портфолио</h1>
     </div>
@@ -391,9 +392,52 @@
             </figure>
         </div>
     </div>
+    <div class="background-element">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        
+    </div>
 </main>
 
 <style>
+    body {
+        margin: 0;
+        font-family: "Releway", sans-serif;
+    }
+
+    .background-element {
+    display: grid;
+    position: absolute; /* Add this line to take the element out of the normal document flow */
+    top: 0; /* Add this line to position the element at the top of the viewport */
+    left: 0; /* Add this line to position the element at the left edge of the viewport */
+    width: 100%; /* Add this line to make the element full width */
+    height: 100%; /* Add this line to make the element full height */
+    z-index: -1; /* Add this line to make the element appear behind the other elements */
+}
+
+.box1 {
+    grid-column: 0;
+    grid-row: 1;
+    background-color: rgba(255, 255, 255, 0.0);
+    border: 14px solid #000000;
+    margin-left: -8%;
+    margin-top: -14%;
+    width: 1600px; /* Width of the red square */
+    height: 1600px;
+}
+
+.box2 {
+    grid-column: 4;
+    grid-row: 7;
+    background-color: rgba(255, 255, 255, 0.0);
+    border: 5px solid #000000;
+    margin-left: 0;
+    margin-top: 0;
+    width: 340px; /* Width of the red square */
+    height: 340px;
+}
+
+    
     .text-container {
         display: flex;
         flex-direction: column;
