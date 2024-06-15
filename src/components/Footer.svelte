@@ -98,7 +98,7 @@
         background-color: transparent;
         overflow: hidden;
         margin-left: 5%;
-        margin-top: -7%;
+        margin-top: -9%;
     }
 
     .imgLogo {
