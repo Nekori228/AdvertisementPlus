@@ -40,17 +40,14 @@
                     data-bs-parent="#accordionExample"
                 >
                     <div class="accordion-body">
-                        <strong>This is the first item's accordion body.</strong
+                        <button
+                            type="button"
+                            class="btn btn-primary"
+                            data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"
                         >
-                        It is shown by default, until the collapse plugin adds the
-                        appropriate classes that we use to style each element. These
-                        classes control the overall appearance, as well as the showing
-                        and hiding via CSS transitions. You can modify any of this
-                        with custom CSS or overriding our default variables. It's
-                        also worth noting that just about any HTML can go within
-                        the
-                        <code>.accordion-body</code>, though the transition does
-                        limit overflow.
+                            Launch demo modal
+                        </button>
                     </div>
                 </div>
             </div>
@@ -179,6 +176,59 @@
             >
         </li>
     </ul>
+    <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <img
+                src="/img/backModal2.png"
+                alt="Background"
+                class="modal-background"
+            />
+            <div class="modal-header">
+                <h1 class="h1MainText" id="exampleModalLabel">
+                    Закажите услугу напрямую <br /> у производителя!
+                </h1>
+            </div>
+                <div class="contentGrid">
+                   
+                <div class="modal-body">
+                    <p class="infoText">Контакты</p>
+                    <div class="infoBlock2">
+                        <p class="infoText">+7 (3462) 66-64-64</p>
+                        <a href="#"
+                            ><img src="/img/icon/phone.svg" alt="phone" /></a
+                        >
+                    </div>
+                    <div class="infoBlock2">
+                        <p class="infoText">7992022@mail.ru</p>
+                        <a href="#"
+                            ><img src="/img/icon/mail2.svg" alt="phone" /></a
+                        >
+                    </div>
+                    <div class="infoBlock2">
+                        <p class="infoText">+79 (227) 99-20-22</p>
+                        <a href="#" class="imgIcon"
+                            ><img src="/img/icon/tg.svg" alt="phone" /></a
+                        >
+                        <a href="#" class="imgIcon"
+                            ><img src="/img/icon/vider.svg" alt="phone" /></a
+                        >
+                        <a href="#" class="imgIcon"
+                            ><img src="/img/icon/watsapp.svg" alt="phone" /></a
+                        >
+                    </div>
+                </div>
+                </div>
+            </div>
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+        </div>
+    </div>
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -194,6 +244,90 @@
         padding: 1% 5% 1%;
         background: #e9e0cf;
         justify-content: space-between;
+    }
+
+    .h1MainText {
+        color: #000;
+        text-align: center;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .infoBlock2 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .infoText {
+        color: #000;
+        font-size: 140%;
+        font-family: "Jost", sans-serif;
+    }
+
+    .modal-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal-header {
+        border-bottom: 0;
+        justify-content: center;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+
+    .dropdown-content.show {
+        display: block;
+    }
+
+    .modal-content {
+        position: relative;
+        color: white; /* Цвет текста для контраста с фоновым изображением */
+    }
+
+    .modal-header,
+    .modal-body,
+    .modal-footer {
+        position: relative;
+        z-index: 1;
+    }
+
+    .modal-title,
+    .btn {
+        color: white;
+    }
+
+    .modal-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
     }
 
     .block1 {
