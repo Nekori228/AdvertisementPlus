@@ -5,6 +5,44 @@
         isMenuOpen = !isMenuOpen;
     }
 
+    let items = [
+        {
+            title: "Услуги печати",
+            content: [
+                "Печать на баннере",
+                "Печать на сетке",
+                "Печать на самоклейке",
+                "Интерьерная печать"
+            ],
+            open: false
+        },
+        {
+            title: "Вывески и таблички",
+            content: [
+                "Item 2.1",
+                "Item 2.2",
+                "Item 2.3"
+            ],
+            open: false
+        },
+        {
+            title: "Прочие услуги",
+            content: [
+                "Item 3.1",
+                "Item 3.2",
+                "Item 3.3"
+            ],
+            open: false
+        }
+    ];
+
+    function toggle(index) {
+        items = items.map((item, i) => ({
+            ...item,
+            open: i === index ? !item.open : item.open
+        }));
+    }
+
     import { Link } from "svelte-routing";
 </script>
 
@@ -20,140 +58,26 @@
         <button class="close-button" on:click={toggleMenu}>
             <img src="/img/arrowMenu.svg" alt="Закрыть" />
         </button>
-        <div class="accordion" id="accordionExample">
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button
-                        class="accordion-button"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne"
-                        aria-expanded="true"
-                        aria-controls="collapseOne"
-                    >
-                        Accordion Item #1
-                    </button>
-                </h2>
-                <div
-                    id="collapseOne"
-                    class="accordion-collapse collapse show"
-                    data-bs-parent="#accordionExample"
-                >
-                    <div class="accordion-body">
-                        <button
-                            type="button"
-                            class="btn btn-primary"
-                            data-bs-toggle="modal"
-                            data-bs-target="#exampleModal"
-                        >
-                            Launch demo modal
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button
-                        class="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapseTwo"
-                        aria-expanded="false"
-                        aria-controls="collapseTwo"
-                    >
-                        Accordion Item #2
-                    </button>
-                </h2>
-                <div
-                    id="collapseTwo"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#accordionExample"
-                >
-                    <div class="accordion-body">
-                        <strong
-                            >This is the second item's accordion body.</strong
-                        >
-                        It is hidden by default, until the collapse plugin adds the
-                        appropriate classes that we use to style each element. These
-                        classes control the overall appearance, as well as the showing
-                        and hiding via CSS transitions. You can modify any of this
-                        with custom CSS or overriding our default variables. It's
-                        also worth noting that just about any HTML can go within
-                        the
-                        <code>.accordion-body</code>, though the transition does
-                        limit overflow.
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header">
-                    <button
-                        class="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#collapseThree"
-                        aria-expanded="false"
-                        aria-controls="collapseThree"
-                    >
-                        Accordion Item #3
-                    </button>
-                </h2>
-                <div
-                    id="collapseThree"
-                    class="accordion-collapse collapse"
-                    data-bs-parent="#accordionExample"
-                >
-                    <div class="accordion-body">
-                        <strong>This is the third item's accordion body.</strong
-                        >
-                        It is hidden by default, until the collapse plugin adds the
-                        appropriate classes that we use to style each element. These
-                        classes control the overall appearance, as well as the showing
-                        and hiding via CSS transitions. You can modify any of this
-                        with custom CSS or overriding our default variables. It's
-                        also worth noting that just about any HTML can go within
-                        the
-                        <code>.accordion-body</code>, though the transition does
-                        limit overflow.
-                    </div>
-                </div>
+        <div class="accordion">
+            {#each items as item, index}
+        <div class="accordion-header-container {item.open ? 'active' : ''}" on:click={() => toggle(index)}>
+            <div class="accordion-header">
+                <img class="arrow {item.open ? 'open' : ''}" src="/img/icon/arrow.svg" alt="Arrow" />
+                {item.title}
             </div>
         </div>
-        <div class="dropdown">
-            <button class="dropdown-button">
-                <img class="arrow" src="/img/icon/arrow.svg" alt="Arrow" />
-                <p class="maindropdowntext">Услуги печати</p>
-            </button>
-            <ul class="dropdown-list">
-                <li><p class="lastdropdowntext">Печать на баннере</p></li>
-                <li><p class="lastdropdowntext">Печать на сетке</p></li>
-                <li><p class="lastdropdowntext">Печать на самоклейке</p></li>
-                <li><p class="lastdropdowntext">Интерьерная печать</p></li>
-            </ul>
-        </div>
-        <div class="dropdown">
-            <button class="dropdown-button">
-                <img class="arrow" src="/img/icon/arrow.svg" alt="Arrow" />
-                <p class="maindropdowntext">Услуги печати</p>
-            </button>
-            <ul class="dropdown-list">
-                <li><p class="lastdropdowntext">Печать на баннере</p></li>
-                <li><p class="lastdropdowntext">Печать на сетке</p></li>
-                <li><p class="lastdropdowntext">Печать на самоклейке</p></li>
-                <li><p class="lastdropdowntext">Интерьерная печать</p></li>
-            </ul>
-        </div>
-        <div class="dropdown">
-            <button class="dropdown-button">
-                <img class="arrow" src="/img/icon/arrow.svg" alt="Arrow" />
-                <p class="maindropdowntext">Услуги печати</p>
-            </button>
-            <ul class="dropdown-list">
-                <li><p class="lastdropdowntext">Печать на баннере</p></li>
-                <li><p class="lastdropdowntext">Печать на сетке</p></li>
-                <li><p class="lastdropdowntext">Печать на самоклейке</p></li>
-                <li><p class="lastdropdowntext">Интерьерная печать</p></li>
-            </ul>
+        {#if item.open}
+            <div class="accordion-content-container">
+                <div class="accordion-content">
+                    <ul>
+                        {#each item.content as subitem}
+                            <li>{subitem}</li>
+                        {/each}
+                    </ul>
+                </div>
+            </div>
+        {/if}
+    {/each}
         </div>
     </nav>
     <img src="/img/logo_small.svg" alt="small logo" width="200" height="64" />
@@ -329,6 +253,79 @@
         object-fit: cover;
         z-index: 0;
     }
+
+    .accordion {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирование элементов по горизонтали */
+}
+
+.accordion-header-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.accordion-header {
+    font-size: 25px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+    border-bottom: 0px solid #ccc;
+    width: 100%;
+    max-width: 600px;
+    text-align: left; /* Прижатие текста к левому краю */
+    display: flex;
+    align-items: center;
+}
+
+.accordion-header .arrow {
+    transition: transform 0.3s ease;
+}
+
+.accordion-header .arrow.open {
+    transform: rotate(-1deg); /* Поворот стрелки вниз */
+}
+
+.accordion-content-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.accordion-header-container.active {
+    background-color: rgba(255, 255, 255, 37%); /* Цвет при открытом состоянии */
+}
+
+.accordion-content {
+    padding: 15px;
+    width: 100%;
+    max-width: 600px;
+    text-align: left; /* Прижатие текста к левому краю */
+    margin-left: 18%;
+    margin-right: 10%;
+}
+
+.accordion-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.accordion-content li {
+    padding: 5px 0;
+    font-size: 18px;
+    font-family: "Jost", sans-serif;
+    font-weight: 400;
+}
+
 
     .block1 {
         padding: 10px;
