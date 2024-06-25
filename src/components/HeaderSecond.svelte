@@ -1,8 +1,17 @@
 <script>
+    import { Link } from "svelte-routing";
+    import Modal from './Modal.svelte';
+
     let isMenuOpen = false;
+    let isModalOpen = false;
+    let modalContent = "";
 
     function toggleMenu() {
         isMenuOpen = !isMenuOpen;
+    }
+
+    function closeMenu() {
+        isMenuOpen = false;
     }
 
     let items = [
@@ -12,38 +21,38 @@
                 "Печать на баннере",
                 "Печать на сетке",
                 "Печать на самоклейке",
-                "Интерьерная печать"
+                "Интерьерная печать",
             ],
-            open: false
+            open: false,
         },
         {
             title: "Вывески и таблички",
-            content: [
-                "Item 2.1",
-                "Item 2.2",
-                "Item 2.3"
-            ],
-            open: false
+            content: ["Item 2.1", "Item 2.2", "Item 2.3"],
+            open: false,
         },
         {
             title: "Прочие услуги",
-            content: [
-                "Item 3.1",
-                "Item 3.2",
-                "Item 3.3"
-            ],
-            open: false
-        }
+            content: ["Item 3.1", "Item 3.2", "Item 3.3"],
+            open: false,
+        },
     ];
 
     function toggle(index) {
         items = items.map((item, i) => ({
             ...item,
-            open: i === index ? !item.open : item.open
+            open: i === index ? !item.open : item.open,
         }));
     }
 
-    import { Link } from "svelte-routing";
+    function openModal(content) {
+        modalContent = content;
+        isModalOpen = true;
+    }
+
+    function closeModal() {
+        isModalOpen = false;
+        modalContent = "";
+    }
 </script>
 
 <header>
@@ -54,32 +63,50 @@
             <div></div>
         </div>
     </button>
+
+    {#if isMenuOpen}
+        <div class="overlay" on:click={closeMenu}></div>
+    {/if}
+
     <nav class:open={isMenuOpen}>
         <button class="close-button" on:click={toggleMenu}>
-            <img src="/img/arrowMenu.svg" alt="Закрыть" />
+            <img
+                src="/img/arrowMenu.svg"
+                width="25"
+                height="25"
+                alt="Закрыть"
+            />
         </button>
         <div class="accordion">
             {#each items as item, index}
-        <div class="accordion-header-container {item.open ? 'active' : ''}" on:click={() => toggle(index)}>
-            <div class="accordion-header">
-                <img class="arrow {item.open ? 'open' : ''}" src="/img/icon/arrow.svg" alt="Arrow" />
-                {item.title}
-            </div>
-        </div>
-        {#if item.open}
-            <div class="accordion-content-container">
-                <div class="accordion-content">
-                    <ul>
-                        {#each item.content as subitem}
-                            <li>{subitem}</li>
-                        {/each}
-                    </ul>
+                <div
+                    class="accordion-header-container {item.open ? 'active' : ''}"
+                    on:click={() => toggle(index)}
+                >
+                    <div class="accordion-header">
+                        <img
+                            class="arrow {item.open ? 'open' : ''}"
+                            src="/img/icon/arrow.svg"
+                            alt="Arrow"
+                        />
+                        {item.title}
+                    </div>
                 </div>
-            </div>
-        {/if}
-    {/each}
+                {#if item.open}
+                    <div class="accordion-content-container">
+                        <div class="accordion-content">
+                            <ul>
+                                {#each item.content as subitem}
+                                    <li on:click={() => openModal(subitem)}>{subitem}</li>
+                                {/each}
+                            </ul>
+                        </div>
+                    </div>
+                {/if}
+            {/each}
         </div>
     </nav>
+
     <img src="/img/logo_small.svg" alt="small logo" width="200" height="64" />
     <ul class="ulHeader">
         <li>
@@ -100,65 +127,10 @@
             >
         </li>
     </ul>
-    <div
-        class="modal fade"
-        id="exampleModal"
-        tabindex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-    >
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content">
-                <img
-                src="/img/backModal2.png"
-                alt="Background"
-                class="modal-background"
-            />
-            <div class="modal-header">
-                <h1 class="h1MainText" id="exampleModalLabel">
-                    Закажите услугу напрямую <br /> у производителя!
-                </h1>
-            </div>
-                <div class="contentGrid">
-                   
-                <div class="modal-body">
-                    <p class="infoText">Контакты</p>
-                    <div class="infoBlock2">
-                        <p class="infoText">+7 (3462) 66-64-64</p>
-                        <a href="#"
-                            ><img src="/img/icon/phone.svg" alt="phone" /></a
-                        >
-                    </div>
-                    <div class="infoBlock2">
-                        <p class="infoText">7992022@mail.ru</p>
-                        <a href="#"
-                            ><img src="/img/icon/mail2.svg" alt="phone" /></a
-                        >
-                    </div>
-                    <div class="infoBlock2">
-                        <p class="infoText">+79 (227) 99-20-22</p>
-                        <a href="#" class="imgIcon"
-                            ><img src="/img/icon/tg.svg" alt="phone" /></a
-                        >
-                        <a href="#" class="imgIcon"
-                            ><img src="/img/icon/vider.svg" alt="phone" /></a
-                        >
-                        <a href="#" class="imgIcon"
-                            ><img src="/img/icon/watsapp.svg" alt="phone" /></a
-                        >
-                    </div>
-                </div>
-                </div>
-            </div>
-            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-        </div>
-    </div>
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"
-    ></script>
 </header>
+
+<Modal isOpen={isModalOpen} content={modalContent} on:close={closeModal} />
+
 
 <style>
     header {
@@ -170,196 +142,12 @@
         justify-content: space-between;
     }
 
-    .h1MainText {
-        color: #000;
-        text-align: center;
-    }
-
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-
-    .infoBlock2 {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-
-    .infoText {
-        color: #000;
-        font-size: 140%;
-        font-family: "Jost", sans-serif;
-    }
-
-    .modal-body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .modal-header {
-        border-bottom: 0;
-        justify-content: center;
-    }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-    }
-
-    .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-    }
-
-    .dropdown-content a:hover {
-        background-color: #f1f1f1;
-    }
-
-    .dropdown-content.show {
-        display: block;
-    }
-
-    .modal-content {
-        position: relative;
-        color: white; /* Цвет текста для контраста с фоновым изображением */
-    }
-
-    .modal-header,
-    .modal-body,
-    .modal-footer {
-        position: relative;
-        z-index: 1;
-    }
-
-    .modal-title,
-    .btn {
-        color: white;
-    }
-
-    .modal-background {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 0;
-    }
-
-    .accordion {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Центрирование элементов по горизонтали */
-}
-
-.accordion-header-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.accordion-header {
-    font-size: 25px;
-    font-family: "Raleway", sans-serif;
-    font-weight: 500;
-    margin-left: 10%;
-    margin-right: 10%;
-    padding: 15px;
-    background-color: rgba(255, 255, 255, 0);
-    cursor: pointer;
-    border-bottom: 0px solid #ccc;
-    width: 100%;
-    max-width: 600px;
-    text-align: left; /* Прижатие текста к левому краю */
-    display: flex;
-    align-items: center;
-}
-
-.accordion-header .arrow {
-    transition: transform 0.3s ease;
-}
-
-.accordion-header .arrow.open {
-    transform: rotate(-1deg); /* Поворот стрелки вниз */
-}
-
-.accordion-content-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.accordion-header-container.active {
-    background-color: rgba(255, 255, 255, 37%); /* Цвет при открытом состоянии */
-}
-
-.accordion-content {
-    padding: 15px;
-    width: 100%;
-    max-width: 600px;
-    text-align: left; /* Прижатие текста к левому краю */
-    margin-left: 18%;
-    margin-right: 10%;
-}
-
-.accordion-content ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.accordion-content li {
-    padding: 5px 0;
-    font-size: 18px;
-    font-family: "Jost", sans-serif;
-    font-weight: 400;
-}
-
-
-    .block1 {
-        padding: 10px;
-    }
-
-    nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: 400px;
-        background-color: #e9e0cf;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-    }
-
-    nav.open {
-        transform: translateX(0);
-    }
-
     .ulHeader {
         display: flex;
         list-style: none;
         margin-left: auto;
         padding: 0;
         margin-top: 1%;
-    }
-
-    .ulMenu {
-        display: flex;
-        flex-direction: column;
-        list-style: none;
-        margin-left: auto;
-        padding: 0;
     }
 
     .btnNav {
@@ -400,43 +188,131 @@
         height: 3px;
         background-color: #000;
         margin: 5px 0;
-        transition: transform 0.3s ease; /* Добавляем анимацию */
+        transition: transform 0.3s ease;
     }
 
     .burger-menu.open div:first-child {
-        transform: rotate(45deg) translate(5px, 5px); /* Вращаем первую линию */
+        transform: rotate(45deg) translate(5px, 5px);
     }
 
     .burger-menu.open div:nth-child(2) {
-        opacity: 0; /* Скрываем вторую линию */
+        opacity: 0;
     }
 
     .burger-menu.open div:last-child {
-        transform: rotate(-45deg) translate(7px, -7px); /* Вращаем третью линию */
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    nav {
+        text-align: end;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 400px;
+        background-color: #e9e0cf;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+
+    nav.open {
+        transform: translateX(0);
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 500;
+    }
+
+    .accordion {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .accordion-header-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .accordion-header {
+        font-size: 25px;
+        font-family: "Raleway", sans-serif;
+        font-weight: 500;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding: 15px;
+        background-color: rgba(255, 255, 255, 0);
+        cursor: pointer;
+        border-bottom: 0px solid #ccc;
+        width: 100%;
+        max-width: 600px;
+        text-align: left;
+        display: flex;
+        align-items: center;
+    }
+
+    .accordion-header .arrow {
+        transition: transform 0.3s ease;
+    }
+
+    .accordion-header .arrow.open {
+        transform: rotate(-1deg);
+    }
+
+    .accordion-content-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .accordion-header-container.active {
+        background-color: rgba(255, 255, 255, 37%);
+    }
+
+    .accordion-content {
+        padding: 15px;
+        width: 100%;
+        max-width: 600px;
+        text-align: left;
+        margin-left: 18%;
+        margin-right: 10%;
+    }
+
+    .accordion-content ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .accordion-content li {
+        padding: 5px 0;
+        font-size: 18px;
+        font-family: "Jost", sans-serif;
+        font-weight: 400;
+    }
+
+    .block1 {
+        padding: 10px;
     }
 
     .close-button {
         background-color: #e9e0cf;
         border: none;
         cursor: pointer;
-        padding: 10px;
+        padding: 20px;
         font-size: 16px;
-    }
-
-    .dropdown {
-        position: relative;
-    }
-
-    .dropdown-button {
-        background-color: rgba(255, 255, 255, 0);
-        width: 100%;
-        height: 70px;
-        border: none;
-        padding: 10px 20px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 
     .arrow {
@@ -447,39 +323,5 @@
         background-size: cover;
         transform: rotate(90deg);
         transition: transform 0.3s ease;
-    }
-
-    .dropdown-button:active,
-    .dropdown-button:focus {
-        background-color: rgba(255, 255, 255, 0.37);
-    }
-
-    .dropdown-list {
-        position: absolute;
-        top: 80%;
-        left: 20%;
-        right: 20%;
-        display: none;
-        list-style-type: none;
-    }
-
-    .dropdown-button:focus + .dropdown-list {
-        display: block;
-    }
-
-    .dropdown-button:focus .arrow {
-        transform: rotate(0deg);
-    }
-
-    .maindropdowntext {
-        font-size: 25px;
-        font-family: "Raleway", sans-serif;
-        font-weight: 500;
-    }
-
-    .lastdropdowntext {
-        font-size: 18px;
-        font-family: "Jost", sans-serif;
-        font-weight: 400;
     }
 </style>
