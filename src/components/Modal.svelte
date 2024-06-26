@@ -1,23 +1,23 @@
-<!-- Modal.svelte -->
 <script>
+    import { createEventDispatcher } from 'svelte';
+
     export let isOpen = false;
     export let content = "";
-    export let onClose;
+
+    const dispatch = createEventDispatcher();
 
     function closeModal() {
-        if (typeof onClose === 'function') {
-            onClose();
-        }
+        dispatch('close');
     }
 </script>
 
 {#if isOpen}
-    <div class="modal-overlay">
-        <div class="background-photo"></div>
+    <div class="modal-overlay" on:click={closeModal}>
         <div class="modal-content" on:click|stopPropagation>
-            <button class="close-button" on:click={closeModal}>×</button>
+            <img class="modal-image" src="img/backModal2.png">
             <div class="modal-body">
                 {content}
+                <button class="close-button" on:click={closeModal}>×</button>
             </div>
         </div>
     </div>
@@ -25,6 +25,7 @@
 
 <style>
     .modal-overlay {
+        background-color: rgba(0, 0, 0, 0.5);
         position: fixed;
         top: 0;
         left: 0;
@@ -34,34 +35,26 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-image: url('backModal2.png');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
     }
-    .background-photo {
+
+    .modal-content {
+        position: relative;
+        width: 45%;
+        height: 60%;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .modal-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1; /* Ensure it's behind modal-content */
-        background-image: inherit;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        filter: blur(4px); /* Optional: Add blur effect to the background */
+        z-index: -1;
     }
-    .modal-content {
-        background: rgba(255, 255, 255, 0.8); /* Transparent white background */
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        position: relative;
-        max-width: 80%; /* Adjust as needed */
-        max-height: 80%; /* Adjust as needed */
-        overflow-y: auto; /* Enable scrolling if content overflows */
-    }
+
     .close-button {
         position: absolute;
         top: 10px;
@@ -71,9 +64,12 @@
         font-size: 1.5em;
         cursor: pointer;
         color: rgba(0, 0, 0, 0.7);
+        z-index: 1;
     }
+    
     .modal-body {
         padding: 20px;
         font-size: 1em;
+        z-index: 1;
     }
 </style>
