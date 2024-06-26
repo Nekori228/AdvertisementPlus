@@ -1,5 +1,5 @@
 <script>
-    import { createEventDispatcher } from 'svelte';
+    import { createEventDispatcher } from "svelte";
 
     export let isOpen = false;
     export let content = "";
@@ -7,17 +7,46 @@
     const dispatch = createEventDispatcher();
 
     function closeModal() {
-        dispatch('close');
+        dispatch("close");
     }
 </script>
 
 {#if isOpen}
     <div class="modal-overlay" on:click={closeModal}>
         <div class="modal-content" on:click|stopPropagation>
-            <img class="modal-image" src="img/backModal2.png">
+            <img class="modal-image" src="img/backModal2.png" />
             <div class="modal-body">
-                {content}
-                <button class="close-button" on:click={closeModal}>×</button>
+                <p class="modal-main">
+                    Закажите услугу напрямую у производителя!
+                </p>
+                <p class="modal-second">Контакты</p>
+                <div class="container">
+                    <div class="block phones">
+                        <div class="phone-number">+7 (123) 456-7890</div>
+                        <div class="phone-number">+7 (987) 654-3210</div>
+                        <div class="phone-number">+7 (987) 654-3210</div>
+                    </div>
+                    <div class="block icons">
+                        <div class="app-icon">
+                            <img src="/img/icon/tg.svg" />
+                        </div>
+                        <div class="app-icon">
+                            <img src="/img/icon/mail2.svg" />
+                        </div>
+                        <div class="row-position">
+                            <div class="app-icon">
+                                <img src="/img/icon/tg.svg" />
+                            </div>
+                            <div class="app-icon">
+                                <img src="/img/icon/tg.svg" />
+                            </div>
+                            <div class="app-icon">
+                                <img src="/img/icon/tg.svg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="turquoise-button" on:click={closeModal}><p class="button-thanks">Спасибо</p></button>
             </div>
         </div>
     </div>
@@ -66,10 +95,90 @@
         color: rgba(0, 0, 0, 0.7);
         z-index: 1;
     }
-    
+
     .modal-body {
         padding: 20px;
         font-size: 1em;
         z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal-main {
+        font-size: 35px;
+        font-family: "Raleway", sans-serif;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .modal-second {
+        font-family: "Jost", sans-serif;
+        font-size: 25px;
+        font-weight: 400;
+    }
+
+    .row-position {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .container {
+        display: flex;
+        padding: 0 20px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .button-thanks {
+        font-family: "Jost", sans-serif;
+        font-size: 180%;
+        font-weight: 500;
+        margin: 0;
+    }
+
+    .turquoise-button {
+        background-color: #31848A; /* Бирюзовый цвет */
+        color: white;
+        padding: 2% 8%;
+        border: none;
+        border-radius: 16px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень */
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .turquoise-button:hover {
+        background-color: #3bccc1; /* Более тёмный бирюзовый при наведении */
+    }
+
+    .block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .phones {
+        align-items: flex-end;
+            margin: 2%;
+    }
+
+    .icons {
+        align-items: flex-start;
+        margin: 2%;
+    }
+
+    .block .phone-number,
+    .block .app-icon {
+        margin: 10px 0;
+    }
+
+    .phone-number {
+        font-family: "Jost", sans-serif;
+        font-size: 200%;
+        font-weight: 300;
+        padding: 2px;
     }
 </style>
