@@ -26,13 +26,13 @@
         <div class="infoBlock">
             <p class="textInfoCont">+79 (227) 99-20-22</p>
             <a href="#" class="imgIcon"
-                ><img src="/img/icon/tg.svg" alt="phone" /></a
+                ><img src="/img/icon/tgBrown.svg" alt="phone" /></a
             >
             <a href="#" class="imgIcon"
-                ><img src="/img/icon/vider.svg" alt="phone" /></a
+                ><img src="/img/icon/viderBrown.svg" alt="phone" /></a
             >
             <a href="#" class="imgIcon"
-                ><img src="/img/icon/watsapp.svg" alt="phone" /></a
+                ><img src="/img/icon/watsappBrown.svg" alt="phone" /></a
             >
         </div>
     </div>
@@ -93,6 +93,9 @@
 
     .textInfoCont {
         margin: 0;
+        font-family: "Jost", sans-serif;
+        font-size: 25px;
+        font-weight: 300;
     }
     .infoBlock a {
         display: flex;
