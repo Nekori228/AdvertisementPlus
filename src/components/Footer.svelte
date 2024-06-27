@@ -24,7 +24,7 @@
                 <div class="contactsInfo">
                     <p>+7 (3462) 66-64-64</p>
                     <a href="" class="linkPad"
-                        ><img src="/img/icon/mail.svg" /></a
+                        ><img src="/img/icon/phone_small.svg" /></a
                     >
                 </div>
                 <div class="contactsInfo">
@@ -36,7 +36,16 @@
                 <div class="contactsInfo">
                     <p>+79 (227) 99-20-22</p>
                     <a href="" class="linkPad"
-                        ><img src="/img/icon/mail.svg" /></a
+                        ><img src="/img/icon/tg_small.svg" /></a
+                    >
+                    <a href="" class="linkPad"
+                        ><img src="/img/icon/viber_small.svg" /></a
+                    >
+                    <a href="" class="linkPad"
+                        ><img src="/img/icon/watsap_small.svg" /></a
+                    >
+                    <a href="" class="linkPad"
+                        ><img src="/img/icon/phone_small.svg" /></a
                     >
                 </div>
             </div>
@@ -140,7 +149,7 @@
     }
 
     .linkPad {
-        padding: 0 6%;
+        padding: 0 2%;
     }
 
     a {
@@ -177,6 +186,7 @@
         font-family: "Jost", sans-serif;
         font-size: 15px;
         font-weight: 400;
+        padding-top: 3%;
     }
 
     .background-element {
