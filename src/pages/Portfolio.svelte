@@ -23,5 +23,6 @@
   .blocMar {
     margin-top: 5%;
     margin-bottom: 13%;
+    text-align: center;
   }
 </style>

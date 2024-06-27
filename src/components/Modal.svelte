@@ -17,7 +17,7 @@
             <img class="modal-image" src="img/backModal2.png" />
             <div class="modal-body">
                 <p class="modal-main">
-                    Закажите услугу напрямую у производителя!
+                    Закажите услугу напрямую<br />у производителя!
                 </p>
                 <p class="modal-second">Контакты</p>
                 <div class="container">
@@ -28,25 +28,30 @@
                     </div>
                     <div class="block icons">
                         <div class="app-icon">
-                            <img src="/img/icon/tg.svg" />
+                            <img src="/img/icon/phone.svg" />
                         </div>
                         <div class="app-icon">
                             <img src="/img/icon/mail2.svg" />
                         </div>
                         <div class="row-position">
                             <div class="app-icon">
-                                <img src="/img/icon/tg.svg" />
+                                <img src="/img/icon/tgBrown.svg" />
                             </div>
                             <div class="app-icon">
-                                <img src="/img/icon/tg.svg" />
+                                <img src="/img/icon/viderBrown.svg" />
                             </div>
                             <div class="app-icon">
-                                <img src="/img/icon/tg.svg" />
+                                <img src="/img/icon/watsappBrown.svg" />
+                            </div>
+                            <div class="app-icon">
+                                <img src="/img/icon/phone.svg" />
                             </div>
                         </div>
                     </div>
                 </div>
-                <button class="turquoise-button" on:click={closeModal}><p class="button-thanks">Спасибо</p></button>
+                <button class="turquoise-button" on:click={closeModal}
+                    ><p class="button-thanks">Спасибо</p></button
+                >
             </div>
         </div>
     </div>
@@ -59,7 +64,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 100%;
+        height: 103%;
         z-index: 1000;
         display: flex;
         justify-content: center;
@@ -84,18 +89,6 @@
         z-index: -1;
     }
 
-    .close-button {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: none;
-        border: none;
-        font-size: 1.5em;
-        cursor: pointer;
-        color: rgba(0, 0, 0, 0.7);
-        z-index: 1;
-    }
-
     .modal-body {
         padding: 20px;
         font-size: 1em;
@@ -107,16 +100,18 @@
     }
 
     .modal-main {
-        font-size: 35px;
+        font-size: 40px;
         font-family: "Raleway", sans-serif;
         font-weight: 600;
         text-align: center;
+        margin-bottom: 5%;
     }
 
     .modal-second {
         font-family: "Jost", sans-serif;
-        font-size: 25px;
+        font-size: 30px;
         font-weight: 400;
+        margin: 0;
     }
 
     .row-position {
@@ -129,6 +124,7 @@
         padding: 0 20px;
         align-items: center;
         justify-content: center;
+        width: 81%;
     }
 
     .button-thanks {
@@ -139,15 +135,16 @@
     }
 
     .turquoise-button {
-        background-color: #31848A; /* Бирюзовый цвет */
+        background-color: #31848a; /* Бирюзовый цвет */
         color: white;
-        padding: 2% 8%;
+        padding: 1% 6%;
         border: none;
         border-radius: 16px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень */
         font-size: 16px;
         cursor: pointer;
         transition: background-color 0.3s ease;
+        margin-top: 3%;
     }
 
     .turquoise-button:hover {
@@ -162,7 +159,7 @@
 
     .phones {
         align-items: flex-end;
-            margin: 2%;
+        margin: 2%;
     }
 
     .icons {
@@ -172,7 +169,7 @@
 
     .block .phone-number,
     .block .app-icon {
-        margin: 10px 0;
+        margin: 10px 5px;
     }
 
     .phone-number {

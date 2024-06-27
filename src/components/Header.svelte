@@ -1,18 +1,63 @@
 <script>
+    import { Link } from "svelte-routing";
+    import Modal from "./Modal.svelte";
+    
     let isMenuOpen = false;
+    let isModalOpen = false;
+    let modalContent = "";
 
     function toggleMenu() {
         isMenuOpen = !isMenuOpen;
     }
 
-    import { Link } from 'svelte-routing';
+    function closeMenu() {
+        isMenuOpen = false;
+    }
+
+    let items = [
+        {
+            title: "Услуги печати",
+            content: [
+                "Печать на баннере",
+                "Печать на сетке",
+                "Печать на самоклейке",
+                "Интерьерная печать",
+            ],
+            open: false,
+        },
+        {
+            title: "Вывески и таблички",
+            content: ["Item 2.1", "Item 2.2", "Item 2.3"],
+            open: false,
+        },
+        {
+            title: "Прочие услуги",
+            content: ["Item 3.1", "Item 3.2", "Item 3.3"],
+            open: false,
+        },
+    ];
+
+    function toggle(index) {
+        items = items.map((item, i) => ({
+            ...item,
+            open: i === index ? !item.open : item.open,
+        }));
+    }
+
+    function openModal(content) {
+        modalContent = content;
+        isModalOpen = true;
+    }
+
+    function closeModal() {
+        isModalOpen = false;
+        modalContent = "";
+    }
 </script>
 
-<head>
-    
-</head>
+<head> </head>
 
-<header class="headerMain">
+<header>
     <button class="burger-button" on:click={toggleMenu}>
         <div class="burger-menu" class:open={isMenuOpen}>
             <div></div>
@@ -20,69 +65,70 @@
             <div></div>
         </div>
     </button>
+
+    {#if isMenuOpen}
+        <div class="overlay" on:click={closeMenu}></div>
+    {/if}
+
     <nav class:open={isMenuOpen}>
         <button class="close-button" on:click={toggleMenu}>
-            <img src="/img/arrowMenu.svg" alt="Закрыть" />
+            <img
+                src="/img/arrowMenu.svg"
+                width="25"
+                height="25"
+                alt="Закрыть"
+            />
         </button>
-        <div class="dropdown">
-            <button class="dropdown-button">
-                <img class="arrow" src="/img/icon/arrow.svg" alt="Arrow" />
-                <p class="maindropdowntext">Услуги печати</p>
-            </button>
-            <ul class="dropdown-list">
-                <li><p class="lastdropdowntext">Печать на баннере</p></li>
-                <li><p class="lastdropdowntext">Печать на сетке</p></li>
-                <li><p class="lastdropdowntext">Печать на самоклейке</p></li>
-                <li><p class="lastdropdowntext">Интерьерная печать</p></li>
-            </ul>
+        <div class="accordion">
+            {#each items as item, index}
+                <div
+                    class="accordion-header-container {item.open
+                        ? 'active'
+                        : ''}"
+                    on:click={() => toggle(index)}
+                >
+                    <div class="accordion-header">
+                        <img
+                            class="arrow {item.open ? 'open' : ''}"
+                            src="/img/icon/arrow.svg"
+                            alt="Arrow"
+                        />
+                        {item.title}
+                    </div>
+                </div>
+                {#if item.open}
+                    <div class="accordion-content-container">
+                        <div class="accordion-content">
+                            <ul>
+                                {#each item.content as subitem}
+                                    <li on:click={() => openModal(subitem)}>
+                                        {subitem}
+                                    </li>
+                                {/each}
+                            </ul>
+                        </div>
+                    </div>
+                {/if}
+            {/each}
         </div>
-        <div class="dropdown">
-            <button class="dropdown-button">
-                <img class="arrow" src="/img/icon/arrow.svg" alt="Arrow" />
-                <p class="maindropdowntext">Услуги печати</p>
-            </button>
-            <ul class="dropdown-list">
-                <li><p class="lastdropdowntext">Печать на баннере</p></li>
-                <li><p class="lastdropdowntext">Печать на сетке</p></li>
-                <li><p class="lastdropdowntext">Печать на самоклейке</p></li>
-                <li><p class="lastdropdowntext">Интерьерная печать</p></li>
-            </ul>
-        </div>
-        <div class="dropdown">
-            <button class="dropdown-button">
-                <img class="arrow" src="/img/icon/arrow.svg" alt="Arrow" />
-                <p class="maindropdowntext">Услуги печати</p>
-            </button>
-            <ul class="dropdown-list">
-                <li><p class="lastdropdowntext">Печать на баннере</p></li>
-                <li><p class="lastdropdowntext">Печать на сетке</p></li>
-                <li><p class="lastdropdowntext">Печать на самоклейке</p></li>
-                <li><p class="lastdropdowntext">Интерьерная печать</p></li>
-            </ul>
-        </div>
-        <!-- <ul class="ulMenu">
-            <li></li>
-            <div class="block1"></div>
-            <li>
-                <a href=""><h2>Портфолио</h2></a>
-            </li>
-            <div class="block1"></div>
-            <li>
-                <a href=""><h2>Портфолио</h2></a>
-            </li>
-        </ul> -->
     </nav>
     <img src="/img/logo_small.svg" alt="small logo" width="200" height="64" />
     <ul class="ulHeader">
         <li>
-            <Link style="text-decoration: none;" to="Contact"><h2 class="btnNav">Контакты</h2></Link>
+            <Link style="text-decoration: none;" to="Contact"
+                ><h2 class="btnNav">Контакты</h2></Link
+            >
         </li>
         <div class="block1"></div>
         <li>
-            <Link style="text-decoration: none;" to="Portfolio"><h2 class="btnNav">Портфолио</h2></Link>
+            <Link style="text-decoration: none;" to="Portfolio"
+                ><h2 class="btnNav">Портфолио</h2></Link
+            >
         </li>
     </ul>
 </header>
+
+<Modal isOpen={isModalOpen} content={modalContent} on:close={closeModal} />
 
 <style>
     header {
@@ -94,38 +140,12 @@
         justify-content: space-between;
     }
 
-    .block1 {
-        padding: 10px;
-    }
-
-    nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        width: 400px;
-        background-color: #e9e0cf;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-    }
-
-    nav.open {
-        transform: translateX(0);
-    }
-
     .ulHeader {
         display: flex;
         list-style: none;
         margin-left: auto;
         padding: 0;
-    }
-
-    .ulMenu {
-        display: flex;
-        flex-direction: column;
-        list-style: none;
-        margin-left: auto;
-        padding: 0;
+        margin-top: 1%;
     }
 
     .btnNav {
@@ -166,43 +186,130 @@
         height: 3px;
         background-color: #000;
         margin: 5px 0;
-        transition: transform 0.3s ease; /* Добавляем анимацию */
+        transition: transform 0.3s ease;
     }
 
     .burger-menu.open div:first-child {
-        transform: rotate(45deg) translate(5px, 5px); /* Вращаем первую линию */
+        transform: rotate(45deg) translate(5px, 5px);
     }
 
     .burger-menu.open div:nth-child(2) {
-        opacity: 0; /* Скрываем вторую линию */
+        opacity: 0;
     }
 
     .burger-menu.open div:last-child {
-        transform: rotate(-45deg) translate(7px, -7px); /* Вращаем третью линию */
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    nav {
+        text-align: end;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 400px;
+        background-color: #e9e0cf;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+
+    nav.open {
+        transform: translateX(0);
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 500;
+    }
+
+    .accordion {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .accordion-header-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .accordion-header {
+        font-size: 25px;
+        font-family: "Raleway", sans-serif;
+        font-weight: 500;
+        margin-left: 10%;
+        margin-right: 10%;
+        padding: 15px;
+        background-color: rgba(255, 255, 255, 0);
+        cursor: pointer;
+        border-bottom: 0px solid #ccc;
+        width: 100%;
+        max-width: 600px;
+        text-align: left;
+        display: flex;
+        align-items: center;
+    }
+
+    .accordion-header .arrow {
+        transition: transform 0.3s ease;
+    }
+
+    .accordion-header .arrow.open {
+        transform: rotate(-1deg);
+    }
+
+    .accordion-content-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .accordion-header-container.active {
+        background-color: rgba(255, 255, 255, 37%);
+    }
+
+    .accordion-content {
+        padding: 15px;
+        width: 100%;
+        max-width: 600px;
+        text-align: left;
+        margin-left: 18%;
+        margin-right: 10%;
+    }
+
+    .accordion-content ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .accordion-content li {
+        padding: 5px 0;
+        font-size: 18px;
+        font-family: "Jost", sans-serif;
+        font-weight: 400;
+    }
+
+    .block1 {
+        padding: 10px;
     }
 
     .close-button {
         background-color: #e9e0cf;
         border: none;
         cursor: pointer;
-        padding: 10px;
+        padding: 20px;
         font-size: 16px;
-    }
-
-    .dropdown {
-        position: relative;
-    }
-
-    .dropdown-button {
-        background-color: rgba(255, 255, 255, 0);
-        width: 100%;
-        height: 70px;
-        border: none;
-        padding: 10px 20px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 
     .arrow {
@@ -213,39 +320,5 @@
         background-size: cover;
         transform: rotate(90deg);
         transition: transform 0.3s ease;
-    }
-
-    .dropdown-button:active,
-    .dropdown-button:focus {
-        background-color: rgba(255, 255, 255, 0.37);
-    }
-
-    .dropdown-list {
-        position: absolute;
-        top: 80%;
-        left: 20%;
-        right: 20%;
-        display: none;
-        list-style-type: none;
-    }
-
-    .dropdown-button:focus + .dropdown-list {
-        display: block;
-    }
-
-    .dropdown-button:focus .arrow {
-        transform: rotate(0deg);
-    }
-
-    .maindropdowntext{
-        font-size: 25px;
-        font-family: 'Raleway', sans-serif;
-        font-weight: 500;
-    }
-
-    .lastdropdowntext {
-        font-size: 18px;
-        font-family: 'Jost', sans-serif;
-        font-weight: 400;
     }
 </style>
